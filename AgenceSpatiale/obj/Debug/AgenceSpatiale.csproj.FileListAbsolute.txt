@@ -1,0 +1,7 @@
+C:\Users\stamandnadine\source\repos\AgenceSpatiale\AgenceSpatiale\obj\Debug\AgenceSpatiale.csprojAssemblyReference.cache
+C:\Users\stamandnadine\source\repos\AgenceSpatiale\AgenceSpatiale\obj\Debug\AgenceSpatiale.csproj.CoreCompileInputs.cache
+C:\Users\stamandnadine\source\repos\AgenceSpatiale\AgenceSpatiale\bin\Debug\AgenceSpatiale.exe.config
+C:\Users\stamandnadine\source\repos\AgenceSpatiale\AgenceSpatiale\bin\Debug\AgenceSpatiale.exe
+C:\Users\stamandnadine\source\repos\AgenceSpatiale\AgenceSpatiale\bin\Debug\AgenceSpatiale.pdb
+C:\Users\stamandnadine\source\repos\AgenceSpatiale\AgenceSpatiale\obj\Debug\AgenceSpatiale.exe
+C:\Users\stamandnadine\source\repos\AgenceSpatiale\AgenceSpatiale\obj\Debug\AgenceSpatiale.pdb
