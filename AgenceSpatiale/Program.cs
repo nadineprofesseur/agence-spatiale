@@ -8,7 +8,7 @@ namespace AgenceSpatiale
 		{
 			SeismeDAO seismeDAO;
 			seismeDAO = new SeismeDAO();
-			string xmlSeismeStella = seismeDAO.listerSeismes();
+			string xmlSeismeStella = seismeDAO.listerSeismes("Stella");
 			Console.WriteLine(xmlSeismeStella);
 			Console.ReadKey(true);
 		}
