@@ -11,7 +11,7 @@ namespace AgenceSpatiale
 	class NouvelleDAO
 	{
 		//public List<Nouvelle> listerNouvelles(string rss)
-		public string listerNouvelles(string rss)
+		public List<Nouvelle> listerNouvelles(string rss)
 		{
 			List<Nouvelle> listeNouvelles = new List<Nouvelle>();
 			Console.WriteLine("RssDAO.listerNouvelles(" + rss + ")");
@@ -61,7 +61,7 @@ namespace AgenceSpatiale
 			}
 			//string titre = (string)lecteurNouvelle.ReadContentAs(typeof(string), null); // bug
 
-			return xml;
+			return listeNouvelles;
 		}
 	}
 }

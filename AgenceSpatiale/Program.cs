@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace AgenceSpatiale
 {
@@ -14,8 +15,11 @@ namespace AgenceSpatiale
 			//Console.WriteLine(xmlSeismeStella);
 
 			string rssMeteoQuebec = "http://meteo.gc.ca/rss/city/qc-133_f.xml";
-			string xmlMeteoQuebec = nouvelleDAO.listerNouvelles(rssMeteoQuebec);
-			//Console.WriteLine(xmlMeteoQuebec);
+			List<Nouvelle> listeNouvelles = nouvelleDAO.listerNouvelles(rssMeteoQuebec);
+			foreach (Nouvelle nouvelle in listeNouvelles)
+			{
+				Console.WriteLine(nouvelle.titre);
+			}
 
 			// DISFONCTIONNEL
 
