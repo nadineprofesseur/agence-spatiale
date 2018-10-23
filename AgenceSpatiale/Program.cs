@@ -11,14 +11,14 @@ namespace AgenceSpatiale
 			NouvelleDAO nouvelleDAO = new NouvelleDAO();
 
 			//FONCTIONNEL
-			//string xmlSeismeStella = seismeDAO.listerSeismes("Stella");
+			string xmlSeismeStella = seismeDAO.listerSeismes("Stella");
 			//Console.WriteLine(xmlSeismeStella);
 
 			string rssMeteoQuebec = "http://meteo.gc.ca/rss/city/qc-133_f.xml";
-			List<Nouvelle> listeNouvelles = nouvelleDAO.listerNouvelles(rssMeteoQuebec);
-			foreach (Nouvelle nouvelle in listeNouvelles)
+			//List<Nouvelle> listeNouvelles = nouvelleDAO.listerNouvelles(rssMeteoQuebec);
+			//foreach (Nouvelle nouvelle in listeNouvelles)
 			{
-				Console.WriteLine(nouvelle.titre);
+			//	Console.WriteLine(nouvelle.titre);
 			}
 
 			// DISFONCTIONNEL

@@ -24,7 +24,20 @@ namespace AgenceSpatiale
 			// string -> byte[] -> MemoryStream -> XPathDocument -> XPathNavigator
 			MemoryStream flux = new MemoryStream(Encoding.ASCII.GetBytes(xml));
 			XPathDocument document = new XPathDocument(flux);
-			XPathNavigator navigateurXPath = document.CreateNavigator();
+			XPathNavigator navigateurSeismes = document.CreateNavigator();
+
+			XPathNodeIterator visiteurSeismes = navigateurSeismes.Select("/response/rows/row");
+
+			visiteurSeismes.MoveNext();
+			XPathNavigator navigateurSeisme = visiteurSeismes.Current; // un séisme pointé
+			string source = navigateurSeisme.Select("/source").Current.ToString();
+			Console.WriteLine("Source " + source);
+
+			visiteurSeismes.MoveNext();
+			XPathNavigator navigateurSeisme2 = visiteurSeismes.Current; // un séisme pointé
+			string source2 = navigateurSeisme2.Select("/source").Current.ToString();
+			Console.WriteLine("Source " + source2);
+
 
 			return xml;
 		}
