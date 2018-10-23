@@ -32,6 +32,9 @@ namespace AgenceSpatiale
 			{
 				XPathNavigator navigateurSeisme = visiteurSeismes.Current; // un séisme pointé
 				string source = navigateurSeisme.Select("/source").Current.ToString();
+				string magnitude = navigateurSeisme.Select("/magnitude").Current.ToString();
+				string profondeur = navigateurSeisme.Select("/depth").Current.ToString();
+				string region = navigateurSeisme.Select("/region").Current.ToString();
 				Console.WriteLine("Source " + source);
 			}
 
