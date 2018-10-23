@@ -6,17 +6,16 @@ namespace AgenceSpatiale
 	{
 		static void Main(string[] args)
 		{
-			SeismeDAO seismeDAO;
+			SeismeDAO seismeDAO = new SeismeDAO();
 			NouvelleDAO nouvelleDAO = new NouvelleDAO();
 
 			//FONCTIONNEL
-			seismeDAO = new SeismeDAO();
 			//string xmlSeismeStella = seismeDAO.listerSeismes("Stella");
 			//Console.WriteLine(xmlSeismeStella);
 
 			string rssMeteoQuebec = "http://meteo.gc.ca/rss/city/qc-133_f.xml";
 			string xmlMeteoQuebec = nouvelleDAO.listerNouvelles(rssMeteoQuebec);
-			Console.WriteLine(xmlMeteoQuebec);
+			//Console.WriteLine(xmlMeteoQuebec);
 
 			// DISFONCTIONNEL
 

@@ -1,6 +1,8 @@
 ﻿using System.IO;
 using System;
 using System.Net;
+using System.Xml;
+using System.Xml.Linq;
 
 
 namespace AgenceSpatiale
@@ -18,7 +20,21 @@ namespace AgenceSpatiale
 			//ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
 			WebResponse reponse = requeteNouvelles.GetResponse();
 			StreamReader lecteur = new StreamReader(reponse.GetResponseStream());
-			return lecteur.ReadToEnd();
+			string xml = lecteur.ReadToEnd();
+			XElement nouvellesXML = XElement.Parse(xml);
+			foreach (XElement nouvelleXML in nouvellesXML.Elements())
+			{
+				//Console.WriteLine(nouvelleXML.ToString());
+				//XDocument nouvelleDoc = nouvelleXML.CreateReader();
+				XmlReader lecteurNouvelle = nouvelleXML.CreateReader();
+				lecteurNouvelle.MoveToContent();
+				lecteurNouvelle.ReadToDescendant("title");
+				string titre = lecteurNouvelle.ReadInnerXml();
+				Console.WriteLine(titre);
+			}
+			//string titre = (string)lecteurNouvelle.ReadContentAs(typeof(string), null); // bug
+
+			return xml;
 		}
 	}
 }
