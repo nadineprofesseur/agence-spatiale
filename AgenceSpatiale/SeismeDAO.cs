@@ -3,6 +3,7 @@ using System.IO;
 using System;
 using System.Text;
 using System.Xml.XPath;
+using System.Collections.Generic;
 
 namespace AgenceSpatiale
 {
@@ -10,9 +11,10 @@ namespace AgenceSpatiale
 	{
 		public static string URL_SEISME= "http://soda.demo.socrata.com/resource/6yvf-kk3n.xml?source=pr&$where=region%20like%20%27%25{{LIEU}}%25%27";
 
-		//public List<Seisme> listerSeismes(string lieu)
-		public string listerSeismes(string lieu)
+		public List<Seisme> listerSeismes(string lieu)
 		{
+			List<Seisme> listeSeismes = new List<Seisme>();
+
 			Console.WriteLine("SeismeDAO.listerSeismes("+lieu+")");
 			string url = URL_SEISME.Replace("{{LIEU}}", lieu);
 			Console.WriteLine(url);
@@ -38,7 +40,7 @@ namespace AgenceSpatiale
 				Console.WriteLine("Source " + source);
 			}
 
-			return xml;
+			return listeSeismes;
 		}
 	}
 }
