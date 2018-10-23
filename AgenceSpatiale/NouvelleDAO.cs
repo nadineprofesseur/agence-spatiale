@@ -7,6 +7,7 @@ namespace AgenceSpatiale
 {
 	class NouvelleDAO
 	{
+		//public List<Nouvelle> listerNouvelles(string rss)
 		public string listerNouvelles(string rss)
 		{
 			Console.WriteLine("RssDAO.listerNouvelles(" + rss + ")");
