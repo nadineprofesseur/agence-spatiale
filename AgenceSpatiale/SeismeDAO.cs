@@ -38,6 +38,13 @@ namespace AgenceSpatiale
 				string profondeur = navigateurSeisme.Select("/depth").Current.ToString();
 				string region = navigateurSeisme.Select("/region").Current.ToString();
 				Console.WriteLine("Source " + source);
+
+				Seisme seisme = new Seisme();
+				seisme.region = region;
+				seisme.magnitude = magnitude;
+				seisme.source = source;
+				seisme.profondeur = profondeur;
+				listeSeismes.Add(seisme);
 			}
 
 			return listeSeismes;

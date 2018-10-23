@@ -11,7 +11,8 @@ namespace AgenceSpatiale
 			NouvelleDAO nouvelleDAO = new NouvelleDAO();
 
 			//FONCTIONNEL
-			string xmlSeismeStella = seismeDAO.listerSeismes("Stella");
+			List<Seisme> listeSeismes = seismeDAO.listerSeismes("Stella");
+			Console.WriteLine(listeSeismes.Count + " seismes");
 			//Console.WriteLine(xmlSeismeStella);
 
 			string rssMeteoQuebec = "http://meteo.gc.ca/rss/city/qc-133_f.xml";
