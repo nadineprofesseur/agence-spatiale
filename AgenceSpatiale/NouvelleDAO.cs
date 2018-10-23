@@ -3,6 +3,7 @@ using System;
 using System.Net;
 using System.Xml;
 using System.Xml.Linq;
+using System.Collections.Generic;
 
 
 namespace AgenceSpatiale
@@ -12,6 +13,7 @@ namespace AgenceSpatiale
 		//public List<Nouvelle> listerNouvelles(string rss)
 		public string listerNouvelles(string rss)
 		{
+			List<Nouvelle> listeNouvelles = new List<Nouvelle>();
 			Console.WriteLine("RssDAO.listerNouvelles(" + rss + ")");
 			HttpWebRequest requeteNouvelles = (HttpWebRequest)WebRequest.Create(rss);
 			requeteNouvelles.Method = "GET";
@@ -48,7 +50,14 @@ namespace AgenceSpatiale
 				string resume = lecteurNouvelle.ReadInnerXml();
 				Console.WriteLine(resume);
 
+				Nouvelle nouvelle = new Nouvelle();
+				nouvelle.titre = titre;
+				//nouvelle.lien = lien;
+				nouvelle.publication = publication;
+				//nouvelle.categorie = categorie;
+				nouvelle.resume = resume;
 
+				listeNouvelles.Add(nouvelle);
 			}
 			//string titre = (string)lecteurNouvelle.ReadContentAs(typeof(string), null); // bug
 
