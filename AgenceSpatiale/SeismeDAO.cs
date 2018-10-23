@@ -1,6 +1,8 @@
 ﻿using System.Net;
 using System.IO;
 using System;
+using System.Text;
+using System.Xml.XPath;
 
 namespace AgenceSpatiale
 {
@@ -17,7 +19,14 @@ namespace AgenceSpatiale
 			WebRequest requeteSeismes = WebRequest.Create(url);
 			WebResponse reponse = requeteSeismes.GetResponse();
 			StreamReader lecteur = new StreamReader(reponse.GetResponseStream());
-			return lecteur.ReadToEnd();
+			string xml = lecteur.ReadToEnd();
+
+			// string -> byte[] -> MemoryStream -> XPathDocument -> XPathNavigator
+			MemoryStream flux = new MemoryStream(Encoding.ASCII.GetBytes(xml));
+			XPathDocument document = new XPathDocument(flux);
+			XPathNavigator navigateurXPath = document.CreateNavigator();
+
+			return xml;
 		}
 	}
 }
