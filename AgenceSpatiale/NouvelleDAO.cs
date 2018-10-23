@@ -31,6 +31,24 @@ namespace AgenceSpatiale
 				lecteurNouvelle.ReadToDescendant("title");
 				string titre = lecteurNouvelle.ReadInnerXml();
 				Console.WriteLine(titre);
+
+				//lecteurNouvelle.ReadToFollowing("link");
+				//string lien = lecteurNouvelle.MoveToAttribute("href").ToString();
+				//Console.WriteLine(lien);
+
+				lecteurNouvelle.ReadToFollowing("published");
+				string publication = lecteurNouvelle.ReadInnerXml();
+				Console.WriteLine(publication);
+
+				//lecteurNouvelle.ReadToFollowing("category");
+				//string categorie = lecteurNouvelle.MoveToAttribute("term").ToString();
+				//Console.WriteLine(categorie);
+
+				lecteurNouvelle.ReadToFollowing("summary");
+				string resume = lecteurNouvelle.ReadInnerXml();
+				Console.WriteLine(resume);
+
+
 			}
 			//string titre = (string)lecteurNouvelle.ReadContentAs(typeof(string), null); // bug
 
