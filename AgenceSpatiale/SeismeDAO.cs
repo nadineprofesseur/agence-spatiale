@@ -28,16 +28,12 @@ namespace AgenceSpatiale
 
 			XPathNodeIterator visiteurSeismes = navigateurSeismes.Select("/response/rows/row");
 
-			visiteurSeismes.MoveNext();
-			XPathNavigator navigateurSeisme = visiteurSeismes.Current; // un séisme pointé
-			string source = navigateurSeisme.Select("/source").Current.ToString();
-			Console.WriteLine("Source " + source);
-
-			visiteurSeismes.MoveNext();
-			XPathNavigator navigateurSeisme2 = visiteurSeismes.Current; // un séisme pointé
-			string source2 = navigateurSeisme2.Select("/source").Current.ToString();
-			Console.WriteLine("Source " + source2);
-
+			while (visiteurSeismes.MoveNext())
+			{
+				XPathNavigator navigateurSeisme = visiteurSeismes.Current; // un séisme pointé
+				string source = navigateurSeisme.Select("/source").Current.ToString();
+				Console.WriteLine("Source " + source);
+			}
 
 			return xml;
 		}
