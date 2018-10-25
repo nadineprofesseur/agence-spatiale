@@ -12,7 +12,11 @@ namespace AgenceSpatiale
 			PokemonDAO pokemonDAO = new PokemonDAO();
 
 			//FONCTIONNEL
-			string listePokemon = pokemonDAO.listerPokemon();
+			List<Pokemon> listePokemon = pokemonDAO.listerPokemon();
+			foreach(Pokemon pokemon in listePokemon)
+			{
+				Console.WriteLine("Pokemon du programme principal : " + pokemon.nom);
+			}
 			//List<Seisme> listeSeismes = seismeDAO.listerSeismes("Stella");
 			//Console.WriteLine(listeSeismes.Count + " seismes");
 			//Console.WriteLine(xmlSeismeStella);
