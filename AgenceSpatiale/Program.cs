@@ -9,10 +9,12 @@ namespace AgenceSpatiale
 		{
 			SeismeDAO seismeDAO = new SeismeDAO();
 			NouvelleDAO nouvelleDAO = new NouvelleDAO();
+			PokemonDAO pokemonDAO = new PokemonDAO();
 
 			//FONCTIONNEL
-			List<Seisme> listeSeismes = seismeDAO.listerSeismes("Stella");
-			Console.WriteLine(listeSeismes.Count + " seismes");
+			string listePokemon = pokemonDAO.listerPokemon();
+			//List<Seisme> listeSeismes = seismeDAO.listerSeismes("Stella");
+			//Console.WriteLine(listeSeismes.Count + " seismes");
 			//Console.WriteLine(xmlSeismeStella);
 
 			string rssMeteoQuebec = "http://meteo.gc.ca/rss/city/qc-133_f.xml";
