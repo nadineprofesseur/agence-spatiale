@@ -29,6 +29,15 @@ namespace AgenceSpatiale
 			dynamic objet = parseur.Deserialize<dynamic>(json);
 			string nombre = objet["count"].ToString();
 
+			dynamic[] listePokemonDynamiques = objet["results"];
+			foreach (dynamic pokemonDynamique in listePokemonDynamiques)
+			{
+				string nom = pokemonDynamique["name"].ToString();
+				string source = pokemonDynamique["url"].ToString();
+				Console.WriteLine(nom + " - " + source);
+			}
+
+
 			Console.WriteLine(nombre + " pokemons recus");
 			return json;
 		}
