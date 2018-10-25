@@ -12,5 +12,18 @@ namespace AgenceSpatiale
 		public int hauteur {get;set;}
 		public int numero { get; set; }
 		public string illustration { get; set; }
+	
+		public List<string> abilites { get; set; }
+		public Pokemon()
+		{
+			this.abilites = new List<string>();
+		}
+
+		public void ajouterAbilete(string abilete)
+		{
+			this.abilites.Add(abilete);
+		}
+
+
 	}
 }
