@@ -38,6 +38,7 @@ namespace AgenceSpatiale
 			}
 
 
+
 			Console.WriteLine(nombre + " pokemons recus");
 			return json;
 		}
