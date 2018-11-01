@@ -44,6 +44,8 @@ namespace AgenceSpatiale
 			JavaScriptSerializer parseur = new JavaScriptSerializer();
 			dynamic objet = parseur.Deserialize<dynamic>(json);
 			var lesMonnaies = objet["Data"];
+
+			List<CryptoMonnaie> listeCryptomonnaie = new List<CryptoMonnaie>();
 			foreach (dynamic itemMonnaie in lesMonnaies)
 			{
 				//Console.WriteLine(itemMonnaie.ToString());
@@ -63,6 +65,7 @@ namespace AgenceSpatiale
 				cryptomonnaie.nom = nom;
 				cryptomonnaie.algorithme = algorithme;
 				cryptomonnaie.nombre = nombre;
+				listeCryptomonnaie.Add(cryptomonnaie);
 			}
 
 			return json;
