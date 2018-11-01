@@ -56,6 +56,8 @@ namespace AgenceSpatiale
 				var nombre = monnaie["TotalCoinSupply"];
 				// var illustration = monnaie["ImageUrl"]; KeyNotFoundException
 				Console.WriteLine("Monnaie " + symbole + " : " + nom + "("+nombre+")");
+
+
 			}
 
 			return json;
