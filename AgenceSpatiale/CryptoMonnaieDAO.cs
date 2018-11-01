@@ -57,7 +57,12 @@ namespace AgenceSpatiale
 				// var illustration = monnaie["ImageUrl"]; KeyNotFoundException
 				Console.WriteLine("Monnaie " + symbole + " : " + nom + "("+nombre+")");
 
-
+				// TODO optimiser
+				CryptoMonnaie cryptomonnaie = new CryptoMonnaie();
+				cryptomonnaie.symbole = symbole;
+				cryptomonnaie.nom = nom;
+				cryptomonnaie.algorithme = algorithme;
+				cryptomonnaie.nombre = nombre;
 			}
 
 			return json;
