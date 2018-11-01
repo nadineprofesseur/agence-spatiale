@@ -13,9 +13,21 @@ namespace AgenceSpatiale
 			Console.WriteLine("CryptoMonnaieDAO.listerMonnaies()");
 			string url = "https://www.cryptocompare.com/api/data/coinlist/";
 			HttpWebRequest requeteListeMonnaies = (HttpWebRequest)WebRequest.Create(url);
-			// modifier possiblement les headers de la requete en cas de probleme
 			WebResponse reponse = requeteListeMonnaies.GetResponse();
-			return "";
+			StreamReader lecteurListeMonnaies = new StreamReader(reponse.GetResponseStream());
+			string json = lecteurListeMonnaies.ReadToEnd();
+			//Console.WriteLine(json);
+
+			JavaScriptSerializer parseur = new JavaScriptSerializer();
+			dynamic objet = parseur.Deserialize<dynamic>(json);
+			var lesMonnaies = objet["Data"];
+			foreach (dynamic monnaie in lesMonnaies)
+			{
+				Console.WriteLine(monnaie.ToString());
+				// Donne : [AXIS, System.Collections.Generic.Dictionary`2[System.String, System.Object]]
+			}
+
+			return json;
 		}
 
 	}
