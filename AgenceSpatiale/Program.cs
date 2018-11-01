@@ -10,13 +10,15 @@ namespace AgenceSpatiale
 			SeismeDAO seismeDAO = new SeismeDAO();
 			NouvelleDAO nouvelleDAO = new NouvelleDAO();
 			PokemonDAO pokemonDAO = new PokemonDAO();
+			CryptoMonnaieDAO cryptomonnaieDAO = new CryptoMonnaieDAO();
+			cryptomonnaieDAO.listerMonnaies();
 
 			//FONCTIONNEL
-			List<Pokemon> listePokemon = pokemonDAO.listerPokemon();
+			/*List<Pokemon> listePokemon = pokemonDAO.listerPokemon();
 			foreach(Pokemon pokemon in listePokemon)
 			{
 				Console.WriteLine("Pokemon du programme principal : " + pokemon.nom);
-			}
+			}*/
 			//List<Seisme> listeSeismes = seismeDAO.listerSeismes("Stella");
 			//Console.WriteLine(listeSeismes.Count + " seismes");
 			//Console.WriteLine(xmlSeismeStella);
