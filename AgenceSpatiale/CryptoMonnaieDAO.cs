@@ -31,7 +31,7 @@ namespace AgenceSpatiale
     },
 
 			 */
-		public string listerMonnaies()
+		public List<CryptoMonnaie> listerMonnaies()
 		{
 			Console.WriteLine("CryptoMonnaieDAO.listerMonnaies()");
 			string url = "https://www.cryptocompare.com/api/data/coinlist/";
@@ -68,7 +68,7 @@ namespace AgenceSpatiale
 				listeCryptomonnaie.Add(cryptomonnaie);
 			}
 
-			return json;
+			return listeCryptomonnaie;
 		}
 
 	}
