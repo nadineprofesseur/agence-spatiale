@@ -52,6 +52,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="NouvelleDAO.cs" />
+    <Compile Include="SalonDAO.cs" />
     <Compile Include="Seisme.cs" />
     <Compile Include="SeismeDAO.cs" />
   </ItemGroup>

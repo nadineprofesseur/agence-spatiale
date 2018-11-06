@@ -11,12 +11,17 @@ namespace AgenceSpatiale
 			NouvelleDAO nouvelleDAO = new NouvelleDAO();
 			PokemonDAO pokemonDAO = new PokemonDAO();
 			CryptoMonnaieDAO cryptomonnaieDAO = new CryptoMonnaieDAO();
-			List<CryptoMonnaie> listeMonnaies = cryptomonnaieDAO.listerMonnaies();
+			SalonDAO salonDAO = new SalonDAO();
+
+			string listeSalons = salonDAO.listerSalons();
+			Console.WriteLine(listeSalons);
+
+			/*List<CryptoMonnaie> listeMonnaies = cryptomonnaieDAO.listerMonnaies();
 			foreach (CryptoMonnaie monnaie in listeMonnaies)
 			{
 				Console.WriteLine("Programme principal : " + monnaie.nom);
 			}
-
+			*/
 
 			//FONCTIONNEL
 			/*List<Pokemon> listePokemon = pokemonDAO.listerPokemon();
