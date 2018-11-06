@@ -31,7 +31,7 @@ namespace AgenceSpatiale
     },
 
 			 */
-		public List<CryptoMonnaie> listerMonnaies()
+		public List<CryptoMonnaie> listerMonnaies() // les monnaies sont incompletes, sans leur valeur actuelle
 		{
 			Console.WriteLine("CryptoMonnaieDAO.listerMonnaies()");
 			string url = "https://www.cryptocompare.com/api/data/coinlist/";
@@ -69,6 +69,15 @@ namespace AgenceSpatiale
 			}
 
 			return listeCryptomonnaie;
+		}
+
+		public CryptoMonnaie detaillerMonnaie()
+		{
+			CryptoMonnaie cryptomonnaie = new CryptoMonnaie();
+
+
+
+			return cryptomonnaie;
 		}
 
 	}

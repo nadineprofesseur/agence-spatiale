@@ -44,7 +44,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CryptoMonnaie.cs" />
+    <Compile Include="CryptoMonnaieDAO.cs" />
     <Compile Include="Nouvelle.cs" />
+    <Compile Include="Pokemon.cs" />
     <Compile Include="PokemonDAO.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
