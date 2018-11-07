@@ -13,8 +13,10 @@ namespace AgenceSpatiale
 			CryptoMonnaieDAO cryptomonnaieDAO = new CryptoMonnaieDAO();
 			SalonDAO salonDAO = new SalonDAO();
 
-			string listeSalons = salonDAO.listerSalons();
+			//string listeSalons = salonDAO.listerSalons();
 			//Console.WriteLine(listeSalons);
+			string listeMessages = salonDAO.listerMessagesParSalon("");
+			//Console.WriteLine(listeMessages);
 
 			/*List<CryptoMonnaie> listeMonnaies = cryptomonnaieDAO.listerMonnaies();
 			foreach (CryptoMonnaie monnaie in listeMonnaies)
